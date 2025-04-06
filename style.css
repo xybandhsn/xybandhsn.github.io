@@ -14,13 +14,11 @@ body {
 }
 
 .music-player {
+    /* 移除原来的width和max-width声明 */
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 30px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    width: 400px;
-    max-width: 90%;
     text-align: center;
 }
 
@@ -122,4 +120,59 @@ body {
     border-radius: 4px;
     font-size: 12px;
     white-space: nowrap;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .music-player {
+        width: 320px;
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    .cover-art {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 20px;
+    }
+    
+    .song-title {
+        font-size: 20px;
+    }
+    
+    .artist {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .controls {
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .control-btn {
+        font-size: 20px;
+        padding: 8px;
+    }
+    
+    .play i {
+        font-size: 32px;
+    }
+    
+    /* Ensure proper centering */
+    body {
+        min-height: 100vh;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Desktop保持原有样式 */
+@media (min-width: 769px) {
+    .music-player {
+        width: 400px;
+        padding: 30px;
+    }
 }
