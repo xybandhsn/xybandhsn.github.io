@@ -35,6 +35,16 @@ loopBtn.addEventListener('click', () => {
     loopBtn.style.color = isLooping ? '#1DB954' : '#fff';
 });
 
+// Previous/Next 10 seconds
+document.getElementById('prev-btn').addEventListener('click', () => {
+    audio.currentTime = Math.max(0, audio.currentTime - 10);
+});
+
+document.getElementById('next-btn').addEventListener('click', () => {
+    audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+});
+
+// Remove any existing shuffle-related code
 // Song ended
 audio.addEventListener('ended', () => {
     playBtn.innerHTML = '<i class="bx bx-play"></i>';

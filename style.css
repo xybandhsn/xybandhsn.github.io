@@ -105,3 +105,21 @@ body {
 .play i {
     font-size: 40px;
 }
+
+.control-btn[title] {
+    position: relative;
+}
+
+.control-btn[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
